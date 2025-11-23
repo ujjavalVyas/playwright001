@@ -28,7 +28,7 @@ export default defineConfig({
   timeout: 30 * 1000, // 30 seconds timeout for each test
   retries: 1, // retry once on failure
   
-  use: {
+  use: { //Global settings applied to all tests
     headless: true, // run in headless mode
     viewport: { width: 1280, height: 720 },
     actionTimeout: 10 * 1000, // timeout for each action
