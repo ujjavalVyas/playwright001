@@ -23,10 +23,22 @@
 import { defineConfig, devices } from '@playwright/test';
 //const { defineConfig, devices  } = require('@playwright/test');
 
+
+import dotenv from 'dotenv';
+dotenv.config();
+
+// import dotenv from 'dotenv' ;
+// const ename = process.env.ENV_TEST || 'qa';
+// dotenv.config({
+//   path : `./TestJsons/.env.${ename}`
+// });
+
 export default defineConfig({
   testDir: './tests', // folder where your tests are stored
   timeout: 30 * 1000, // 30 seconds timeout for each test
   retries: 1, // retry once on failure
+  
+
   
   use: { //Global settings applied to all tests
     headless: true, // run in headless mode
@@ -43,12 +55,15 @@ export default defineConfig({
     {
       name: 'Chromium',
       use: { browserName: 'chromium' },
-    
-
     },
     {
       name: 'Firefox',
       use: { browserName: 'firefox' },
+    },
+    {
+      name: 'device',
+      use: {...devices['iPhone 15']},
+
     },
     {
       name: 'WebKit',

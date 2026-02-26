@@ -16,6 +16,7 @@ test("test keyboard 1", async function({page}){
     await page.keyboard.down('ArrowDown',{delay:200});
     await page.waitForTimeout(1000);
     await page.keyboard.press('Enter');
+    
 
     await page.waitForTimeout(1000);
 

@@ -17,6 +17,8 @@ test('login to app', async({page}) => {
     await page.locator("//input[@id='password1']").fill(datas.password);
     await page.pause()
 
+    
+
 })
 })
 }
